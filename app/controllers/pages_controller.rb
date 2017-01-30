@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def counter
   end
+
+  def css_demo
+  end
 end

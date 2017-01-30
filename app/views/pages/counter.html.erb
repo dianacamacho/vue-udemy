@@ -1,5 +1,13 @@
 <div id="counter">
-  <button v-on:click="increase">Click Me</button>
-  <p>{{ count }}</p>
-  <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+  <!-- <button v-on:click="increase(2, $event)">Click Me</button> -->
+  <button v-on:click="count++">Click Me +</button>
+  <button v-on:click="count--">Click Me -</button>
+
+  <p>Counter: {{ count }}</p>
+  <p>Result: {{ result }}</p>
+  <p v-on:mousemove="updateCoordinates">
+    Coordinates: {{ x }} / {{ y }}
+    - <span v-on:mousemove.stop="">DEAD SPOT</span>
+  </p>
+  <input type="text" v-on:keyup.enter.space="alertMe">
 </div>
