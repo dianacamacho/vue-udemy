@@ -1,5 +1,14 @@
 <div id="css-demo">
   <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}"></div>
-  <div class="demo"></div>
-  <div class="demo"></div>
+  <!-- multiple classes using an array -->
+  <div class="demo" :class="[color, {red: attachRed}]"></div>
+  <div class="demo" :style="{backgroundColor: color, width: '200px'}"></div>
+  <div class="demo" :style="{backgroundColor: color}"></div>
+  <div class="demo" :style="myStyle"></div>
+  <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+  <!-- class added based on input value -->
+  <div class="demo" :class="color"></div>
+  <hr>
+  <input v-model="color" placeholder="enter color">
+  <input v-model="width" placeholder="enter width in px">
 </div>
