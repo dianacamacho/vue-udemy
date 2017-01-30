@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/conditional_lists' => 'pages#conditional_lists'
   get '/v_for_list' => 'pages#v_for_list'
   get '/monster_slayer' => 'pages#monster_slayer'
+  get '/template' => 'pages#template'
 end

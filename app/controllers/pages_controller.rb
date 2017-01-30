@@ -16,4 +16,7 @@ class PagesController < ApplicationController
 
   def monster_slayer
   end
+
+  def template
+  end
 end
