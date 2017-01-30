@@ -1,0 +1,12 @@
+<div id="conditional-lists">
+  <p v-if="show">You can see me!</p>
+  <p v-else>Now you see me!</p>
+  <!-- Vue.js version 2.1 or higher, you now actually have access to a v-else-if -->
+
+  <template v-if="show">
+    <p>Inside a template</p>
+  </template>
+  <!-- v-show doesnt completely detaches element from DOM, just hides it with display: none, v-if is better performance wise, since less being rendered in the DOM -->
+  <p v-show="show">Do you also see me?</p>
+  <button @click="show = !show">Switch</button>
+</div>

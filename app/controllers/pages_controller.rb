@@ -7,4 +7,13 @@ class PagesController < ApplicationController
 
   def css_demo
   end
+
+  def conditional_lists
+  end
+
+  def v_for_list
+  end
+
+  def monster_slayer
+  end
 end

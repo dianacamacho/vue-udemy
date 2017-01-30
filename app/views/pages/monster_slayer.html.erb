@@ -1,0 +1,51 @@
+<div class="container">
+  <div id="monster-slayer" class="text-center">
+    <div class="mb-20">
+      <div class="row">
+        <div class="col-xs-6 player-box">You</div>
+        <div class="col-xs-6 player-box">Monster</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="healthbar">
+            <div class="health-status">
+              {{ player.health }}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="healthbar">
+            <div class="health-status">
+              {{ monster.health }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-20">
+      <div v-if="!inProgress" class="row">
+        <div class="start-game">
+          <button @click="inProgress = !inProgress" class="btn btn-success">Start Game</button>
+        </div>
+      </div>
+      <div v-else class="row">
+        <div class="controls">
+          <button @click="attack" class="btn btn-danger">Attack</button>
+          <button @click="specialAttack" class="btn btn-warning">Special Attack</button>
+          <button @click="heal" class="btn btn-success">Heal</button>
+          <button class="btn btn-default" @click="restart">Give Up</button>
+        </div>
+      </div>
+    </div>
+    <div class="mb-20 well">
+      <div class="logs">
+        <div v-for="log in logs">
+          <template v-for="(value, key) in log">
+            <p v-if="key == 'player'" class="player-log">{{ value }}</p>
+            <p v-else class="monster-log">{{ value }}</p>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

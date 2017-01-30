@@ -1,0 +1,32 @@
+<div id="v-for-list">
+  <ul>
+    <!-- object followed by index in parenthesis in v-for loop, bind unique key to keep track of element itself, not just the position -->
+    <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+  </ul>
+
+  <template v-for="person in persons">
+    <div :style="{backgroundColor: person.color}">
+      <h2>Name: {{ person.name }}</h2>
+      <p>Age: {{ person.age }}</p>
+    </div>
+  </template>
+
+   <ul>
+    <!-- loop through properties on objects -->
+    <li v-for="person in persons">
+      <span v-for="value in person">{{ value }}</span>
+    </li>
+  </ul>
+
+  <hr>
+
+  <ul>
+    <!-- add parenthesis to loop through object properties with value and key in parenthesis, can also add index -->
+    <li v-for="person in persons">
+      <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+    </li>
+  </ul>
+
+  <!-- looping through numbers -->
+  <p v-for="n in 10">{{ n }}</p>
+</div>
